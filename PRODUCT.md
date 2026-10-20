@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Inferred from the request to use the existing Python attendance system in Chrome: a local Flask server with HTML, CSS, and JavaScript, backed by Pandas and Excel files.
+User chose Flask for a local browser app in Chrome. The interface uses HTML, CSS, and JavaScript, backed by Pandas and Excel files.
 
 ## Users
 
@@ -40,3 +40,7 @@ The project includes fictional sample records in `Students.xlsx` and `Attendance
 - Keep Excel as the visible, inspectable source of stored data.
 - Make unrecorded attendance distinct from Absent.
 - Give clear feedback when validation blocks an operation.
+
+## Surface Preference
+
+The user chose a clean, simple dashboard for the browser interface.
