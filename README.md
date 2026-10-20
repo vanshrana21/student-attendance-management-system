@@ -1,10 +1,13 @@
 # Student Attendance Management System
 
-A beginner-friendly Python project that uses Pandas to manage students and attendance in Excel workbooks. The first version uses a menu in the terminal so you can follow each operation clearly; Tkinter can be added later without changing the managers.
+A beginner-friendly Python project that uses Pandas to manage students and attendance in Excel workbooks. Open the app in Chrome through its local Flask server; the command-line menu is also available for learning and quick checks.
 
 ## Architecture
 
 - `main.py` — menu and user input/output.
+- `web_app.py` — local Flask server and browser API routes.
+- `templates/index.html` — the browser screens and controls.
+- `static/styles.css`, `static/app.js` — page layout, styling, and browser interactions.
 - `student_manager.py` — register, list, search, and edit students.
 - `attendance_manager.py` — validate dates/statuses and save or correct attendance.
 - `report_manager.py` — daily report, filters, dashboard, and percentage calculations.
@@ -22,6 +25,15 @@ python main.py
 ```
 
 Use Python 3.10 or newer. Close a workbook in Excel before updating it from the program.
+
+To open the browser version in Chrome, install the requirements and start the local server:
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 web_app.py
+```
+
+Then open `http://127.0.0.1:5000` in Chrome. Keep the terminal window running while you use the page. Press `Ctrl+C` in that terminal when you are finished. The server listens only on this computer.
 
 ## Excel formats
 
@@ -41,6 +53,7 @@ Attendance percentage is `Present / (Present + Absent) × 100`. Approved leave i
 - `ReportManager.student_summary` combines student data with grouped attendance counts, applies date/department/semester filters, and computes percentages.
 - `ReportManager.daily_report` joins that date’s recorded attendance onto the student list; missing statuses remain blank.
 - `ExcelHandler.save_report` exports/replaces the named report sheet while retaining other report sheets.
+- In the browser version, `web_app.py` connects button actions to those same manager methods; it does not keep a second copy of the data.
 
 ## Manual checks
 
